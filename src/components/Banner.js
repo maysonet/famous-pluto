@@ -1,12 +1,16 @@
 import React from 'react';
 import _ from 'lodash';
-
 import {markdownify, Link, safePrefix, classNames, toUrl} from '../utils';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import addToMailchimp from 'gatsby-plugin-mailchimp'
+
 
 export default class Banner extends React.Component {
+    
     render() {
         return (
             <section id="banner">
+                
                 <div className="inner">
                     <h2>{_.get(this.props, 'pageContext.frontmatter.banner.title')}</h2>
                     {_.get(this.props, 'pageContext.frontmatter.banner.subtitle') && 
@@ -19,7 +23,57 @@ export default class Banner extends React.Component {
                             ))}
                         </ul>
                     }
+                
                 </div>
+                <div>
+    <Formik
+      initialValues={{ email: '', fname: '' }}
+      validate={values => {
+        const errors = {};
+        if (!values.email) {
+          errors.email = 'Required';
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = 'Invalid email address';
+        }
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting, resetForm }) => {
+        
+        setTimeout(() => {
+          addToMailchimp(values.email, {'FNAME': values.fname})
+          
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+          resetForm();
+        }, 400);
+        
+      }}
+    >
+      
+      {({ isSubmitting }) => (
+        <Form>
+
+          <div className="row gtr-uniform" style={{padding:40}}>
+            <div className="col-12 col-12-xsmall">
+              <Field type="text" name="fname" placeholder="Nombre"/>
+            </div>
+            <div className="col-12 col-12-xsmall">
+              <Field type="email" name="email" placeholder="Email" />
+              <ErrorMessage name="email" component="div" />
+            </div>
+          </div>
+          
+
+            
+          <button type="submit" disabled={isSubmitting}>
+            Suscribete a Madera Fina
+          </button>
+        </Form>
+      )}
+    </Formik>
+  </div>
                 {_.get(this.props, 'pageContext.frontmatter.banner.bottom_link') && 
                     <Link to={(_.get(this.props, 'pageContext.frontmatter.banner.bottom_link.url').startsWith('#') ? _.get(this.props, 'pageContext.frontmatter.banner.bottom_link.url') : safePrefix(toUrl(this.props.pageContext.pages, _.get(this.props, 'pageContext.frontmatter.banner.bottom_link.url'))))} className={classNames({'more': _.get(this.props, 'pageContext.frontmatter.banner.bottom_link.has_arrow')}, {'scrolly': _.get(this.props, 'pageContext.frontmatter.banner.bottom_link.is_scrolly')})}>{_.get(this.props, 'pageContext.frontmatter.banner.bottom_link.label')}</Link>
                 }

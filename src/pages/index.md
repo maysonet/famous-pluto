@@ -3,17 +3,6 @@ title: Home
 banner:
   title: Madera Fina
   subtitle: |-
-    
-  actions:
-    - label: Suscribete a Madera Fina
-      url: /#
-      is_scrolly: false
-      is_primary: false
-  bottom_link:
-    label: Learn More
-    url: '#one'
-    has_arrow: true
-    is_scrolly: true
 sections:
   - type: icons
     title: |-
