@@ -68,8 +68,20 @@ export default class Banner extends React.Component {
 
             
           <button type="submit" disabled={isSubmitting}>
-            Suscribete a Madera Fina
+           Regístrate
+           
           </button>
+          <hr />
+          <div className="inner">
+          
+
+                               
+                               
+            <p>Regístrate con <b>Madera Fina PR</b> para obtener su nuevo sencillo <b>El Mareíto</b> del álbum <b>La Esfera</b>.</p>
+                               
+                               
+                               
+          </div>
         </Form>
       )}
     </Formik>

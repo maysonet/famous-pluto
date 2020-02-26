@@ -8,6 +8,7 @@ export default class Header extends React.Component {
         return (
             <header id="header" className={classNames({'alt': _.get(this.props, 'pageContext.frontmatter.template') === 'home'})}>
                 <h1><Link to={safePrefix('/')}>{_.get(this.props, 'pageContext.site.siteMetadata.title')}</Link></h1>
+                {/*
                 <nav id="nav">
                     <ul>
                         <li className="special">
@@ -25,6 +26,7 @@ export default class Header extends React.Component {
                         </li>
                     </ul>
                 </nav>
+                */}
             </header>
         );
     }

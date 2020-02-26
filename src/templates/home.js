@@ -11,7 +11,6 @@ export default class Home extends React.Component {
         return (
             <Layout {...this.props}>
                 <Banner {...this.props} />
-                
                 {_.map(_.get(this.props, 'pageContext.frontmatter.sections'), (section, section_idx) => {
                     let GetSectionComponent = components[_.get(section, 'component')];
                     return (
