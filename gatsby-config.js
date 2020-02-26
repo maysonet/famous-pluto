@@ -14,7 +14,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-mailchimp',
             options: {
-                endpoint: 'https://gmail.us4.list-manage.com/subscribe/post?u=ccbcb682934bd0d246657416c&amp;id=22f483de4e',
+                endpoint: 'https://gmail.us4.list-manage.com/subscribe/post?u=72529b79d0ea69d891bab3151&amp;id=50da8f520c',
             },
         },
         {
