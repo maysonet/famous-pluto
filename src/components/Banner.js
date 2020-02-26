@@ -79,7 +79,7 @@ export default class Banner extends React.Component {
 
                                
                                
-            <h5>Regístrate con <i>Madera Fina PR</i> para obtener su nuevo sencillo <i>El Mareíto</i> del álbum <i>La Esfera</i>.</h5>
+            <h5>Regístrate con <i>Madera Fina PR</i> para obtener su nuevo sencillo <i>El Mareíto</i> de su álbum <i>La Esfera</i>.</h5>
                                
                                
                                
