@@ -4,7 +4,6 @@ import {markdownify, Link, safePrefix, classNames, toUrl} from '../utils';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
-
 export default class Banner extends React.Component {
     
     render() {
@@ -79,7 +78,7 @@ export default class Banner extends React.Component {
 
                                
                                
-            <h5>Regístrate con <i>Madera Fina PR</i> para obtener su nuevo sencillo <i>El Mareíto</i> de su álbum <i>La Esfera</i>.</h5>
+            <p style={{"font-size": "12px"}}>Regístrate con <strong>Madera Fina PR</strong> para obtener su nuevo sencillo <strong>El Mareíto</strong> de su álbum <strong>La Esfera</strong>.</p>
                                
                                
                                
