@@ -12,10 +12,12 @@ export default class Banner extends React.Component {
             <section id="banner">
                 
                 <div className="inner">
-                    <h2>{_.get(this.props, 'pageContext.frontmatter.banner.title')}</h2>
-                    {_.get(this.props, 'pageContext.frontmatter.banner.subtitle') && 
+                    {/*<h2>{_.get(this.props, 'pageContext.frontmatter.banner.title')}</h2>
+                    {{_.get(this.props, 'pageContext.frontmatter.banner.subtitle') && 
                         markdownify(_.get(this.props, 'pageContext.frontmatter.banner.subtitle'))
-                    }
+                    } */}
+                    <img src="../../images/logo.png" alt="Madera Fina PR Logo" align="middle" height="120"></img>
+                    
                     {_.get(this.props, 'pageContext.frontmatter.banner.actions') && 
                         <ul className="actions special">
                             {_.map(_.get(this.props, 'pageContext.frontmatter.banner.actions'), (action, action_idx) => (
@@ -77,7 +79,7 @@ export default class Banner extends React.Component {
 
                                
                                
-            <p>Regístrate con <b>Madera Fina PR</b> para obtener su nuevo sencillo <b>El Mareíto</b> del álbum <b>La Esfera</b>.</p>
+            <h5>Regístrate con <i>Madera Fina PR</i> para obtener su nuevo sencillo <i>El Mareíto</i> del álbum <i>La Esfera</i>.</h5>
                                
                                
                                
