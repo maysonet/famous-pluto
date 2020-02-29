@@ -80,7 +80,7 @@ export default class Banner extends React.Component {
 
                                
                                
-            <p style={{"font-size": "12px"}}>Regístrate para obtener el nuevo sencillo <strong>El Mareíto</strong> de <strong>La Esfera</strong>.</p>
+            <p style={{"font-size": "12px"}}>Regístrate para obtener el nuevo sencillo <strong>'El Mareíto'</strong> de <strong>'La Esfera'</strong>.</p>
                                
                                
                                
