@@ -1,8 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
-import {markdownify, Link, safePrefix, classNames, toUrl} from '../utils';
+import {Link, safePrefix, classNames, toUrl} from '../utils';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import addToMailchimp from 'gatsby-plugin-mailchimp'
+import {navigate} from 'gatsby';
 
 export default class Banner extends React.Component {
     
@@ -45,9 +46,10 @@ export default class Banner extends React.Component {
         setTimeout(() => {
           addToMailchimp(values.email, {'FNAME': values.fname})
           
-          alert(JSON.stringify(values, null, 2));
+          //alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
           resetForm();
+          navigate('/success');
         }, 400);
         
       }}
